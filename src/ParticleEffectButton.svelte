@@ -38,7 +38,17 @@
     };
 
     onMount(() => {
-      
+
+      const _status = status;
+
+      if (_status === 'normal' && hidden) {
+        status = 'hiding';
+        startAnimation();
+      } else if (_status === 'hidden' && !hidden) {
+        status = 'showing';
+        startAnimation();
+      }
+  
     });
 
     function rand(value) {
@@ -184,7 +194,7 @@
         }
       }
     }
-    
+
     renderParticles(){
       const _status = status
 
