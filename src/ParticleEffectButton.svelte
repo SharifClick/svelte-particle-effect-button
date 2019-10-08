@@ -146,6 +146,29 @@
         _raf = raf(loop)
       }
     }
+
+    addParticle(opts){
+      const _status = status
+
+      const frames = duration * 60 / 1000
+      const _speed = isFunc(speed) ? speed() : speed
+      const _size = isFunc(size) ? size() : size
+
+      _particles.push({
+        startX: opts.x,
+        startY: opts.y,
+        x: _status === 'hiding' ? 0 : _speed * -frames,
+        y: 0,
+        angle: rand(360),
+        counter: _status === 'hiding' ? 0 : frames,
+        increase: Math.PI * 2 / 100,
+        life: 0,
+        death: _status === 'hiding' ? (frames - 20) + Math.random() * 40 : frames,
+        speed: _speed,
+        size: _size
+      })
+    }
+    
     updateParticles(){
       const _status = status
       for (let i = 0; i < _particles.length; i++) {
