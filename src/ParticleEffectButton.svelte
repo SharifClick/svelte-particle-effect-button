@@ -9,6 +9,14 @@
     let canvasPadding = 150;
 
     let Wrapper, Canvas;
+
+    let size = () => Math.floor((Math.random() * 3) + 1);
+    let speed = () => rand(4);
+    let color = '#000';
+    let particlesAmountCoefficient = 3;
+    let oscillationCoefficient = 20;
+    let onBegin = () => {};
+    let onComplete = () => {};
     
  </script>
 
