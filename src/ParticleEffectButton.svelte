@@ -7,6 +7,8 @@
     let style = 'fill';
     let direction = 'left';
     let canvasPadding = 150;
+
+    let Wrapper, Canvas;
     
  </script>
 
