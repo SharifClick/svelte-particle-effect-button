@@ -19,9 +19,13 @@
     let onBegin = () => {};
     let onComplete = () => {};
 
+    let particles = [];
+    let ctx;
+
   
     let status = hidden ? 'hidden' : 'normal';
     let progress = 0;
+    let _progress;
   
 
     let _rect = {
