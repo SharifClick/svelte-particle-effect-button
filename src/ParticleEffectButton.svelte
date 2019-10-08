@@ -1,6 +1,7 @@
 <script>
     import { onMount } from 'svelte';
-    import anime from 'animejs'
+    import anime from 'animejs';
+    import raf from 'raf';
 
     let hidden = false;
     let duration = 1000;
