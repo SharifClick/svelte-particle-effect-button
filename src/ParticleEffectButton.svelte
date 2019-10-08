@@ -46,7 +46,7 @@
       return typeof value === 'function';
     }
 
-    startAnimation = () => {
+    let startAnimation = () => {
       if (!Canvas || !Wrapper) return
 
       let _status = status
@@ -97,9 +97,24 @@
       }
     }
 
+    let loop = () => {
+      updateParticles()
+      renderParticles()
+
+      if (_particles.length) {
+        _raf = raf(loop)
+      } else {
+        _raf = null
+        cycleStatus()
+        onComplete()
+      }
+    }
+
     addParticles(opts){
 
     }
+    updateParticles(){}
+    renderParticles(){}
     
  </script>
 
