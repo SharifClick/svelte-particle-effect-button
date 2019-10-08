@@ -38,3 +38,11 @@
     pointer-events: none;
   }
  </style>
+
+<div class='particles'>
+  <div class="wrapper" style="" bind:this={Wrapper}>
+    <div class="content" style="">
+      <slot></slot>
+    </div>
+  </div>
+</div>
