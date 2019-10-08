@@ -146,7 +146,21 @@
         _raf = raf(loop)
       }
     }
-    updateParticles(){}
+    updateParticles(){
+      const _status = status
+      for (let i = 0; i < _particles.length; i++) {
+        const p = _particles[i]
+
+        if (p.life > p.death) {
+          _particles.splice(i, 1)
+        } else {
+          p.x += p.speed
+          p.y = oscillationCoefficient * Math.sin(p.counter * p.increase)
+          p.life++
+          p.counter += (_status === 'hiding' ? 1 : -1)
+        }
+      }
+    }
     renderParticles(){}
     addParticle(){}
 
