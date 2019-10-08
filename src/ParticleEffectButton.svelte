@@ -1,4 +1,5 @@
 <script>
+    import { onMount } from 'svelte';
 
     let hidden = false;
     let duration = 1000;
@@ -17,6 +18,20 @@
     let oscillationCoefficient = 20;
     let onBegin = () => {};
     let onComplete = () => {};
+
+  
+    let status = hidden ? 'hidden' : 'normal';
+    let progress = 0;
+  
+
+    let _rect = {
+      width: 0,
+      height: 0
+    };
+
+    onMount(() => {
+      
+    });
 
     function rand(value) {
       return Math.random() * value - value / 2;
