@@ -83,6 +83,20 @@
       })
     }
 
+    cycleStatus() {
+      const _status = status
+
+      if (_status === 'normal') {
+        status = 'hiding'; 
+      } else if (_status === 'hidden') {
+        status = 'showing'; 
+      } else if (_status === 'hiding') {
+        status = 'hidden';
+      } else if (_status === 'showing') {
+        status = 'normal';
+      }
+    }
+
     addParticles(opts){
 
     }
