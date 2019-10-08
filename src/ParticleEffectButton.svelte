@@ -184,8 +184,45 @@
         }
       }
     }
-    renderParticles(){}
-    addParticle(){}
+    
+    renderParticles(){
+      const _status = status
+
+      ctx.clearRect(0, 0, Canvas.width, Canvas.height)
+      ctx.fillStyle = ctx.strokeStyle = color
+
+      for (let i = 0; i < _particles.length; ++i) {
+        const p = _particles[i]
+
+        if (p.life < p.death) {
+          ctx.translate(p.startX, p.startY)
+          ctx.rotate(p.angle * Math.PI / 180)
+          ctx.globalAlpha = (status === 'hiding') ? 1 - p.life / p.death : p.life / p.death
+          ctx.beginPath()
+
+          if (type === 'circle') {
+            ctx.arc(p.x, p.y, p.size, 0, 2 * Math.PI)
+          } else if (type === 'triangle') {
+            ctx.moveTo(p.x, p.y)
+            ctx.lineTo(p.x + p.size, p.y + p.size)
+            ctx.lineTo(p.x + p.size, p.y - p.size)
+          } else if (type === 'rectangle') {
+            ctx.rect(p.x, p.y, p.size, p.size)
+          }
+
+          if (style === 'fill') {
+            ctx.fill()
+          } else if (style === 'stroke') {
+            ctx.closePath()
+            ctx.stroke()
+          }
+
+          ctx.globalAlpha = 1
+          ctx.rotate(-p.angle * Math.PI / 180)
+          ctx.translate(-p.startX, -p.startY)
+        }
+      }
+    }
 
     isHorizontal() {
       return direction === 'left' || direction === 'right';
