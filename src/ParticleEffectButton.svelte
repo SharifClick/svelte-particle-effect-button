@@ -45,4 +45,6 @@
       <slot></slot>
     </div>
   </div>
+
+  <canvas class="canvas" bind:this={Canvas} style="" />
 </div>
