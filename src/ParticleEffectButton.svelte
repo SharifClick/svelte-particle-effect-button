@@ -24,6 +24,8 @@
     let particles = [];
     let ctx;
 
+    let _raf = null;
+
   
     let status = hidden ? 'hidden' : 'normal';
     let progress = 0;
@@ -111,8 +113,38 @@
       }
     }
 
-    addParticles(opts){
+    addParticles(_progress_) {
+      const _status = status
+      const { width, height } = _rect;
 
+      const delta = _status === 'hiding' ? _progress_ - _progress : _progress - _progress_
+      const isHorizontal = isHorizontal()
+      const progressValue = (isHorizontal ? width : height) * _progress_ + delta * (_status === 'hiding' ? 100 : 220);
+
+      this._progress = _progress_
+
+      let x = canvasPadding
+      let y = canvasPadding
+
+      if (isHorizontal) {
+        x += direction === 'left' ? progressValue : width - progressValue
+      } else {
+        y += direction === 'top' ? progressValue : height - progressValue
+      }
+
+      let i = Math.floor(particlesAmountCoefficient * (delta * 100 + 1))
+      if (i > 0) {
+        while (i--) {
+          addParticle({
+            x: x + (isHorizontal ? 0 : width * Math.random()),
+            y: y + (isHorizontal ? height * Math.random() : 0)
+          })
+        }
+      }
+
+      if (_raf) {
+        _raf = raf(loop)
+      }
     }
     updateParticles(){}
     renderParticles(){}
