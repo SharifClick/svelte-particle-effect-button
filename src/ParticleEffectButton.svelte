@@ -17,6 +17,14 @@
     let oscillationCoefficient = 20;
     let onBegin = () => {};
     let onComplete = () => {};
+
+    function rand(value) {
+      return Math.random() * value - value / 2;
+    }
+
+    function isFunc(value) {
+      return typeof value === 'function';
+    }
     
  </script>
 
