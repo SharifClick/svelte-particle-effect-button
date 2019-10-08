@@ -44,6 +44,25 @@
     function isFunc(value) {
       return typeof value === 'function';
     }
+
+    startAnimation = () => {
+      if (!Canvas || !Wrapper) return
+
+      let _status = status
+      let _particles = particles;
+
+      if (_status === 'hiding') {
+        this._progress = 0
+      } else {
+        this._progress = 1
+      }
+
+
+      _rect = Wrapper.getBoundingClientRect();
+      Canvas.width = _rect.width + canvasPadding * 2;
+      Canvas.height = _rect.height + canvasPadding * 2;
+      ctx = Canvas.getContext('2d');
+    }
     
  </script>
 
