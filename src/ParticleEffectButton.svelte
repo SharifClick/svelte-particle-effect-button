@@ -116,6 +116,11 @@
     }
     updateParticles(){}
     renderParticles(){}
+    addParticle(){}
+
+    isHorizontal() {
+      return direction === 'left' || direction === 'right';
+    }
     
  </script>
 
