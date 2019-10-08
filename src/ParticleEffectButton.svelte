@@ -1,5 +1,6 @@
 <script>
     import { onMount } from 'svelte';
+    import anime from 'animejs'
 
     let hidden = false;
     let duration = 1000;
@@ -62,6 +63,28 @@
       Canvas.width = _rect.width + canvasPadding * 2;
       Canvas.height = _rect.height + canvasPadding * 2;
       ctx = Canvas.getContext('2d');
+
+      anime({
+        targets: { value: (_status === 'hiding') ? 0 : 100 },
+        value: (_status === 'hiding') ? 100 : 0,
+        duration: duration,
+        easing: easing,
+        begin: onBegin,
+        update: (anim) => {
+          const value = anim.animatables[0].target.value
+          setTimeout(() => {
+            progress = value;
+          })
+
+          if (duration) {
+            addParticles(value / 100)
+          }
+        }
+      })
+    }
+
+    addParticles(opts){
+
     }
     
  </script>
