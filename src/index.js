@@ -1,2 +1,3 @@
 
-export { default as ParticleEffectButton } from "./ParticleEffectButton.svelte";
+import ParticleEffectButton from "./ParticleEffectButton.svelte";
+export default ParticleEffectButton;
