@@ -1,5 +1,18 @@
 <script>
-  import ParticleEffectButton from '../src/index.js'
+  import ParticleEffectButton from '../src/index.js';
+
+    let hidden = false;
+    let animating = false;
+
+    let onToggle = () => {
+    if (animating) return;
+        hidden = !hidden,
+        animating = true
+   }
+
+  let onAnimationComplete = () => {
+      animating = false
+  }
 
 </script>
 
@@ -32,7 +45,7 @@
 
 <div class="container" >
   <ParticleEffectButton>
-    <button>Hello</button>
+    <button>Reset</button>
   </ParticleEffectButton>
 </div>
 
