@@ -96,7 +96,7 @@
       })
     }
 
-    cycleStatus() {
+    function cycleStatus() {
       const _status = status
 
       if (_status === 'normal') {
@@ -123,7 +123,7 @@
       }
     }
 
-    addParticles(_progress_) {
+    function addParticles(_progress_) {
       const _status = status
       const { width, height } = _rect;
 
@@ -157,7 +157,7 @@
       }
     }
 
-    addParticle(opts){
+    function addParticle(opts){
       const _status = status
 
       const frames = duration * 60 / 1000
@@ -179,7 +179,7 @@
       })
     }
     
-    updateParticles(){
+    function updateParticles(){
       const _status = status
       for (let i = 0; i < _particles.length; i++) {
         const p = _particles[i]
@@ -195,7 +195,7 @@
       }
     }
 
-    renderParticles(){
+    function renderParticles(){
       const _status = status
 
       ctx.clearRect(0, 0, Canvas.width, Canvas.height)
@@ -234,7 +234,7 @@
       }
     }
 
-    isHorizontal() {
+    function isHorizontal() {
       return direction === 'left' || direction === 'right';
     }
     
