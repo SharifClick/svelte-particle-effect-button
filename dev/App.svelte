@@ -4,10 +4,10 @@
     let hidden = false;
     let animating = false;
 
-    let onToggle = () => {
+  let onToggle = () => {
     if (animating) return;
-        hidden = !hidden,
-        animating = true
+      hidden = !hidden,
+      animating = true
    }
 
   let onAnimationComplete = () => {
