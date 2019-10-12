@@ -28,7 +28,7 @@
     margin: '2vmax 2vmax 0 0';
     background: grey;
   }
-  button{
+  button.reset{
     position: 'absolute';
     top: '1em';
     right: '1em';
@@ -40,6 +40,16 @@
     padding: '0.7em 1.2em';
     cursor: 'pointer';
     outline: 'none';
+  }
+
+  button{
+    background: '#121019';
+    color: '#fff';
+    padding: '1.5rem 3rem';
+    border: '0';
+    border-radius: 5;
+    cursor: 'pointer';
+    font-size: '1.2em';
   }
 </style>
 
