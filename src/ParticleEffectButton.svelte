@@ -3,7 +3,7 @@
     import anime from 'animejs';
     import raf from 'raf';
 
-    let hidden = false;
+    export let hidden = false;
     let duration = 1000;
     let easing = 'easeInOutCubic';
     let type = 'circle';
@@ -18,8 +18,8 @@
     let color = '#000';
     let particlesAmountCoefficient = 3;
     let oscillationCoefficient = 20;
-    let onBegin = () => {};
-    let onComplete = () => {};
+    export let onBegin = () => {};
+    export let onComplete = () => {};
 
     let particles = [];
     let ctx;
