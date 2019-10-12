@@ -1,5 +1,5 @@
 <script>
-  
+  import ParticleEffectButton from '../src/index.js'
 
 </script>
 
@@ -8,6 +8,8 @@
 </style>
 
 <div class="container" >
-  
+  <ParticleEffectButton>
+    <button>Hello</button>
+  </ParticleEffectButton>
 </div>
 
