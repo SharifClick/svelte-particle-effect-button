@@ -44,8 +44,9 @@
 </style>
 
 <div class="container" >
-  <ParticleEffectButton>
-    <button>Reset</button>
+    <button class="reset" on:click={onToggle}>Reset</button>
+  <ParticleEffectButton {hidden} onComplete={onAnimationComplete}>
+    <button on:click={onToggle}>Whooh</button>
   </ParticleEffectButton>
 </div>
 
