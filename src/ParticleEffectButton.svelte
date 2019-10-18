@@ -4,12 +4,12 @@
     import raf from 'raf';
 
     export let hidden = false;
-    let duration = 1000;
-    let easing = 'easeInOutCubic';
-    let type = 'circle';
-    let style = 'fill';
-    let direction = 'left';
-    let canvasPadding = 150;
+    export let duration = 1000;
+    export let easing = 'easeInOutCubic';
+    export let type = 'circle';
+    export let style = 'fill';
+    export let direction = 'left';
+    export let canvasPadding = 150;
 
     let Wrapper, Canvas;
 
