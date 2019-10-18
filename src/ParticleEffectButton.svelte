@@ -13,11 +13,11 @@
 
     let Wrapper, Canvas;
 
-    let size = () => Math.floor((Math.random() * 3) + 1);
-    let speed = () => rand(4);
-    let color = '#000';
-    let particlesAmountCoefficient = 3;
-    let oscillationCoefficient = 20;
+    export let size = () => Math.floor((Math.random() * 3) + 1);
+    export let speed = () => rand(4);
+    export let color = '#000';
+    export let particlesAmountCoefficient = 3;
+    export let oscillationCoefficient = 20;
     export let onBegin = () => {};
     export let onComplete = () => {};
 
