@@ -59,20 +59,21 @@
   }
 
   button{
-    background: '#121019';
-    color: '#fff';
-    padding: '1.5rem 3rem';
-    border: '0';
+    color: #fff;
+    border: 0;
     border-radius: 5;
-    cursor: 'pointer';
-    font-size: '1.2em';
+    cursor: pointer;
+    font-size: 1.2em;
+    background: #f3f3f3;
+    color: #3c2e9e;
+    padding: 1.8rem 4rem;
   }
 </style>
 
 <div class="container" >
     <button class="reset" on:click={onToggle}>Reset</button>
-  <ParticleEffectButton {hidden} onComplete={onAnimationComplete}>
-    <button on:click={onToggle}>Whooh</button>
+  <ParticleEffectButton {hidden} onComplete={onAnimationComplete} {...buttonOptions}>
+    <button on:click={onToggle}>{text}</button>
   </ParticleEffectButton>
 </div>
 
